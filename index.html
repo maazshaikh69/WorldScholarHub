@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Scholarship Hub | Global University Search</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-graduation-cap"></i> WorldScholar<span>Hub</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#scholarships">Browse</a></li>
+            <li><a href="universities.html">Universities</a></li>
+            <li><a href="contact.html" class="btn-primary">Contact Us</a></li>
+        </ul>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <h1>Unlock Your Global Potential</h1>
+            <p>Access fully funded scholarships from the world's top 100+ universities.</p>
+            
+            <div class="search-container">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Search by University, Country, or Degree...">
+            </div>
+        </div>
+    </header>
+
+    <section class="main-content" id="scholarships">
+        <div class="container">
+            <div class="section-header">
+                <h2>Available Scholarships</h2>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="USA">USA</button>
+                    <button class="filter-btn" data-filter="UK">UK</button>
+                    <button class="filter-btn" data-filter="Europe">Europe</button>
+                    <button class="filter-btn" data-filter="Asia">Asia</button>
+                    <button class="filter-btn" data-filter="Australia">Australia</button>
+                </div>
+            </div>
+
+            <div class="scholarship-grid" id="scholarshipGrid">
+                </div>
+            
+            <div id="noResults" class="hidden">
+                <p>No scholarships found matching your criteria.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>WorldScholarHub</h3>
+                <p>Connecting talent with opportunity across 50+ countries.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="#">About Us</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="socials">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 World Scholarship Hub. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

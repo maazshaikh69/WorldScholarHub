@@ -1,0 +1,504 @@
+/*
+|--------------------------------------------------------------------------
+| WorldScholarHub Stylesheet - Consolidated Version
+|--------------------------------------------------------------------------
+| This file contains all global, index-page, university-page, and contact-page styles.
+*/
+
+/* --- 1. CSS Variables & Reset --- */
+:root {
+    --primary-color: #003366; /* Deep Blue */
+    --secondary-color: #DAA520; /* Gold */
+    --accent-color: #0056b3;
+    --text-dark: #333333;
+    --text-light: #777777;
+    --bg-light: #f4f7f6;
+    --white: #ffffff;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Base container for all content */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* --- 2. Global Components (Navbar, Buttons, Footer) --- */
+
+/* Navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.logo span {
+    color: var(--secondary-color);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--secondary-color);
+}
+
+/* Primary Button */
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white) !important;
+    padding: 0.5rem 1.2rem;
+    border-radius: 5px;
+    transition: var(--transition);
+    border: 2px solid var(--primary-color); /* Added border for consistency */
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-2px);
+    border-color: var(--accent-color);
+}
+
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Main Content Area */
+.main-content {
+    padding: 4rem 5%;
+    min-height: 70vh; /* Ensure content sections push footer down */
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+/* Footer */
+footer {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 4rem 5% 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-col h3 { color: var(--secondary-color); margin-bottom: 1rem; }
+.footer-col h4 { margin-bottom: 1rem; }
+.footer-col a { display: block; margin-bottom: 0.5rem; opacity: 0.8; transition: var(--transition); }
+.footer-col a:hover { opacity: 1; color: var(--secondary-color); }
+
+.socials { display: flex; gap: 15px; }
+.socials i { font-size: 1.2rem; }
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 1rem;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* --- 3. Index Page Styles (Hero, Search, Scholarship Grid) --- */
+
+/* Hero Section */
+.hero {
+    height: 60vh;
+    background: linear-gradient(rgba(0,51,102,0.8), rgba(0,51,102,0.8)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.search-container {
+    background: var(--white);
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.search-container input {
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    margin-left: 10px;
+}
+
+.search-container i {
+    color: var(--primary-color);
+}
+
+/* Filters */
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-btn {
+    background: var(--white);
+    border: 1px solid #ddd;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+}
+
+/* Grid & Cards */
+.scholarship-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border-top: 4px solid var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.card-header {
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.uni-badge {
+    background: #eef2f6;
+    color: var(--primary-color);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.card-body {
+    padding: 1.5rem;
+    flex-grow: 1;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.card-info {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+}
+
+.card-info li {
+    list-style: none;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-footer {
+    padding: 1.5rem;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+.btn-apply {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: var(--white);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-apply:hover {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.hidden {
+    display: none;
+}
+
+/* --- 4. Universities Page Styles --- */
+
+.uni-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.uni-card {
+    display: block;
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: var(--text-dark);
+}
+
+.uni-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 51, 102, 0.2); /* Primary color shadow */
+}
+
+.uni-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+    border-bottom: 4px solid var(--secondary-color);
+}
+
+.uni-card:hover .uni-image {
+    transform: scale(1.05); /* Hover effect on the image */
+}
+
+.uni-info {
+    padding: 1.5rem;
+}
+
+.uni-info h3 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.uni-info p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* --- 5. Contact Page Styles --- */
+
+.contact-card {
+    display: flex;
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    margin-top: 3rem;
+    overflow: hidden;
+}
+
+.contact-info {
+    flex: 1;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.contact-info h3 {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.contact-info p {
+    font-size: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.5;
+}
+
+.contact-form {
+    flex: 1.5;
+    padding: 3rem;
+    background: #fcfcfc;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(218, 165, 32, 0.2);
+}
+
+.form-submit-btn {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+.socials-contact h4 {
+    margin-top: 1rem;
+    color: var(--white);
+}
+.socials-contact a {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    color: var(--white);
+    opacity: 0.8;
+}
+.socials-contact a:hover {
+    color: var(--secondary-color);
+    opacity: 1;
+}
+
+/* --- 6. Media Queries --- */
+
+@media (max-width: 992px) {
+    /* Contact Page Layout */
+    .contact-card {
+        flex-direction: column;
+    }
+    .contact-info {
+        padding: 2rem;
+    }
+    .contact-form {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Global Navigation */
+    .nav-links {
+        display: none; /* For mobile menu toggle */
+    }
+    .hamburger { display: block; }
+    
+    /* Index Page */
+    .hero h1 { font-size: 2rem; }
+    
+    .scholarship-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Universities Page */
+    .uni-grid {
+        grid-template-columns: 1fr;
+    }
+}
